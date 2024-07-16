@@ -1,0 +1,8 @@
+from pathlib import Path
+
+ASSETS = Path(__file__).parent
+
+DATA24_WK28 = ASSETS / "data" / "Sample-Superstore.xls"
+
+if __name__ == "__main__":
+    print(DATA24_WK28)
