@@ -6,7 +6,7 @@ pages24 = []
 for file in os.listdir("./ff24"):
     name, _ = os.path.splitext(file)
     pages24.append(
-        st.Page(f"ff24/{file}", title=name, url_path=f"ff24/{name}")
+        st.Page(f"ff24/{file}", title=name, url_path=name)
     )
 
 pages = {
