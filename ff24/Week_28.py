@@ -101,7 +101,7 @@ def get_figure_for_subcategory():
     ).sum()
 
     for cat in df24_wk28_profit.index.get_level_values(0).unique():
-        df24_wk28_profit.loc[cat, "Total_Profit_by_Category"] = df24_wk28_profit.loc[cat, "Profit"].sum()
+        df24_wk28_profit.loc[cat, "Total_Profit_by_Category"] = df24_wk28_profit.loc[cat, "Profit"].sum() # type: ignore
 
     df24_wk28_profit_by_category = df24_wk28_profit.sort_values(by=["Total_Profit_by_Category", "Profit"]).reset_index()
     fig = go.Figure(go.Bar(
@@ -171,7 +171,7 @@ def get_figure_for_profit_per_year(sub_category):
     fig.update_traces(
         meta=[sub_category],
         marker=dict(
-            color=[negative_color if y<0 else positive_color for y in fig.data[0].y]
+            color=[negative_color if y<0 else positive_color for y in fig.data[0].y] # type: ignore
         ),
         hovertemplate="%{meta[0]} in %{x}<br>Sales: <b>%{customdata[0]:$,.0f}</b><br>Profit: <b>%{y}</b>",
         hoverlabel=dict(bgcolor="white"),
@@ -269,7 +269,7 @@ with col2:
         on_select="rerun", selection_mode="points"
     )
 try:
-    sub_category = event["selection"]["points"][0]["x"][1]
+    sub_category = event["selection"]["points"][0]["x"][1] # type: ignore
 except IndexError:
     sub_category = "all sub-category"
 
