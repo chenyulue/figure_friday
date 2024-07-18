@@ -51,10 +51,10 @@ def get_figure_for_category():
     )
 
     fig.add_annotation(
-        text=("The sales of furniture are ranked second, but the profit <br>of that is the least."),
+        text=("The sales of furniture are ranked second, <br>but the profit of that is the least."),
         x=0, xref="paper", xanchor="left",
         y=1, yref="paper", yanchor="bottom",
-        yshift=30,
+        yshift=30, xshift=-20,
         showarrow=False,
         font=dict(
             size=14,
@@ -83,7 +83,7 @@ def get_figure_for_category():
             font_size=16,
             x=0, xref="paper", xanchor="left",
             y=1, yref="paper", yanchor="bottom",
-            pad=dict(b=70),
+            pad=dict(b=75, l=-20),
         ),
         margin=dict(
             b=5, t=100,
@@ -120,12 +120,13 @@ def get_figure_for_subcategory():
     )
 
     fig.add_annotation(
-        text="Click the bar to select the sub-category and find out when and where has the most or least profit.",
+        text="<b>Click the bar</b> to select the sub-category and find out when and where has <br>the most or least profit.",
         x=0, xref="paper", xanchor="left",
         y=1, yref="paper", yanchor="bottom",
         showarrow=False,
         yshift=20, xshift=-20,
         font_size=14,
+        align="left",
     )
 
     fig.update_layout(
@@ -142,6 +143,9 @@ def get_figure_for_subcategory():
         title=dict(
             text="<b>The profit of Furniture deteriorates due to the largest loss in Tables</b>",
             font_size=16,
+            x=0, xref="paper", xanchor="left",
+            y=1, yref="paper", yanchor="bottom",
+            pad=dict(b=65, l=-20)
         ),
         margin=dict(b=110)
     )
