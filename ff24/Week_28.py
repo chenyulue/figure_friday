@@ -46,7 +46,7 @@ def get_figure_for_category():
     )
     fig.update_traces(
         hoverlabel=dict(
-            bgcolor="white",
+            bgcolor="white", font_color="black"
         )
     )
 
@@ -115,7 +115,7 @@ def get_figure_for_subcategory():
     fig.update_traces(
         hovertemplate="%{x}:<br><b>%{y:$,.0f}<b><extra></extra>",
         hoverlabel=dict(
-            bgcolor="white",
+            bgcolor="white", font_color="black"
         )
     )
 
@@ -178,7 +178,7 @@ def get_figure_for_profit_per_year(sub_category):
             color=[negative_color if y<0 else positive_color for y in fig.data[0].y] # type: ignore
         ),
         hovertemplate="%{meta[0]} in %{x}<br>Sales: <b>%{customdata[0]:$,.0f}</b><br>Profit: <b>%{y}</b>",
-        hoverlabel=dict(bgcolor="white"),
+        hoverlabel=dict(bgcolor="white", font_color="black"),
     )
 
     fig.update_layout(
@@ -233,7 +233,7 @@ def get_figure_for_profit_per_state(sub_category):
         customdata=df24_wk28_by_subcategory_per_district.loc[:, ["State/Province", "Sales"]],
         meta=[sub_category],
         hovertemplate="%{meta[0]} in %{customdata[0]}<br>Sales: <b>%{customdata[1]:$,.0f}</b><br>Profit: <b>%{z:$,.0f}</b><extra></extra>",
-        hoverlabel=dict(bgcolor="white"),
+        hoverlabel=dict(bgcolor="white", font_color="black"),
         zmax=zmax, zmin=zmin, zmid=0, 
     ))
 
